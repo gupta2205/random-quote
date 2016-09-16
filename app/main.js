@@ -6,25 +6,12 @@
  // IIFE function 
 (function(app) {
 	// all variables are angular2 component, modules, platform 
-	var Component = ng.core.Component;
 	var NgModule  = ng.core.NgModule;
 	var BrowserModule = ng.platformBrowser.BrowserModule ;
 	var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic; 
 	var QuoteService = app.QuoteService;
 	var RandomQuoteComponent = app.RandomQuoteComponent;
-	// it's root component with it's selector metadata and template. 
-	var AppComponent = Component({
-		//Metadata
-		selector: 'my-app',
-   	template:
-      '<h1>Random Quote</h1>' +
-      '<random-quote></random-quote>'
-  })
-	.Class({
-		constructor: function AppComponent() {
-		}
-	});
-
+	var AppComponent = app.AppComponent;
 	// Every app should have module and components, odule and provider dependency 
 	//  Imports => Modules, Declaratiosn=> all components, Providers=> All services,, Bootstarp=> root component 
   var AppModule = NgModule({
