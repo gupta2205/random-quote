@@ -13,14 +13,14 @@
 	var AppComponent = app.AppComponent;
 	// Every app should have module and components, odule and provider dependency 
 	//  Imports => Modules, Declaratiosn=> all components, Providers=> All services,, Bootstarp=> root component 
-  var AppModule = NgModule({
+  app.AppModule = NgModule({
     imports: [BrowserModule],
     declarations: [AppComponent, RandomQuoteComponent],
     providers: [QuoteService],
     bootstrap: [AppComponent]
   })
   .Class({
-    constructor: function() { }
+    constructor: function() {}
   });
 
 })(window.app || (window.app ={}));
