@@ -24,13 +24,20 @@
 		getQuote: function() {
       var randomIndex = Math.floor(Math.random() * this.quote.length);
       return this.quote[randomIndex];
+    },
+    generateQuote: function(delay, callback){
+    	var self = this;
+    	callback(self.getQuote());
+    	setTimeout(function() {
+    		callback(self.getQuote());
+    	}, delay);
     }
 	});
 
 	// Componet are used only for view, just like directive used in angular 1
 	var RandomQuoteComponent = Component({
-		//metadata of componnet include sleector which is name of tag we will be using in view
-		//Templae is display, It could be URL
+	//metadata of componnet include sleector which is name of tag we will be using in view
+	//Templae is display, It could be URL
 		selector: 'random-quote',
     template: '<p><em>{{quote.line}}</em> - {{quote.author}}</p>'
 	})
@@ -38,7 +45,10 @@
 	.Class({
 		//Here constructor used service, in this case it's an ARRAY 
 		constructor: [QuoteService, function RandomQuoteComponent(quoteService){
-			this.quote = quoteService.getQuote();
+			var self = this;
+			quoteService.generateQuote(3000, function(quote){
+			self.quote = quote;
+			});
 		}]
 	});
 
@@ -48,7 +58,6 @@
 		selector: 'my-app',
    	template:
       '<h1>Random Quote</h1>' +
-      '<random-quote></random-quote>' +
       '<random-quote></random-quote>'
   })
 	.Class({
