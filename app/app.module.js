@@ -10,13 +10,17 @@
 	var BrowserModule = ng.platformBrowser.BrowserModule ;
 	var QuoteService = app.QuoteService;
 	var RandomQuoteComponent = app.RandomQuoteComponent;
+	var TimeService = app.TimeService;
+  var CurrentTimeComponent = app.CurrentTimeComponent;
 	var AppComponent = app.AppComponent;
+	
+	
 	// Every app should have module and components, odule and provider dependency 
 	//  Imports => Modules, Declaratiosn=> all components, Providers=> All services,, Bootstarp=> root component 
   app.AppModule = NgModule({
     imports: [BrowserModule],
-    declarations: [AppComponent, RandomQuoteComponent],
-    providers: [QuoteService],
+    declarations: [AppComponent, RandomQuoteComponent, CurrentTimeComponent],
+    providers: [QuoteService, TimeService],
     bootstrap: [AppComponent]
   })
   .Class({
