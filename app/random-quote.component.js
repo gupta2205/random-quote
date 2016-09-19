@@ -6,7 +6,6 @@
  // IIFE function 
 (function(app) {
 	// all variables are angular2 component, modules, platform 
-	var Class = ng.core.Class;
 	var Component = ng.core.Component;
 	var QuoteService = app.QuoteService;
 

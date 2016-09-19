@@ -10,7 +10,7 @@
 	var BrowserModule = ng.platformBrowser.BrowserModule ;
 	var QuoteService = app.QuoteService;
 	var RandomQuoteComponent = app.RandomQuoteComponent;
-	var TimeService = app.TimeService;
+  var TimeService = app.TimeService;
   var CurrentTimeComponent = app.CurrentTimeComponent;
 	var AppComponent = app.AppComponent;
 	
@@ -20,7 +20,7 @@
   app.AppModule = NgModule({
     imports: [BrowserModule],
     declarations: [AppComponent, RandomQuoteComponent, CurrentTimeComponent],
-    providers: [QuoteService, TimeService],
+    providers: [TimeService, QuoteService],
     bootstrap: [AppComponent]
   })
   .Class({
@@ -28,3 +28,4 @@
   });
 
 })(window.app || (window.app ={}));
+
